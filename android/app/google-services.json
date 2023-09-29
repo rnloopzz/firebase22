@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "968972934916",
+    "project_id": "eval2-sis22-fe2b9",
+    "storage_bucket": "eval2-sis22-fe2b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968972934916:android:4afb29e7a22bf71792ba51",
+        "android_client_info": {
+          "package_name": "com.yir.eval2_sis22"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDknOJtL7U_UYjNeeVMLoLEZ-ysDa_6pps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
