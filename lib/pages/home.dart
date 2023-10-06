@@ -88,24 +88,54 @@ class _MyHomePageState extends State<MyHomePage> {
     } catch (e) {
       print("Error al agregar producto: $e");
     }
-  }
+  }  
+
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  TextFormField(
+                    controller: nombreController,
+                    decoration: InputDecoration(labelText: "Nombre"),
+                  ),
+                  TextFormField(
+                    controller: estadoController,
+                    decoration: InputDecoration(labelText: "Estado"),
+                  ),
+                  TextFormField(
+                    controller: precioController,
+                    decoration:
+                        InputDecoration(labelText: "Precio"), // Campo de precio
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      agregarProducto();
+                    },
+                    child: Text("Agregar Producto"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      getChat();
+                    },
+                    child: Text("Obtener Datos de Firestore"),
+                  ),
+                ],
+              ),
+            ),  
+
+
+            //yordy
 
 
 
-
-    );
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getProductos();
-  }
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
-}
 
