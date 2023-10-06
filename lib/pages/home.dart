@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
   runApp(const MyApp());
-} 
+}
 //Yordy
 
 class MyApp extends StatelessWidget {
@@ -25,9 +25,8 @@ class MyApp extends StatelessWidget {
   }
 }
 //rene
-  
 
- class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
@@ -65,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Yordy
-   void agregarProducto() async {
+  void agregarProducto() async {
     try {
       CollectionReference collectionReference =
           FirebaseFirestore.instance.collection("tb_productos");
@@ -88,9 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
     } catch (e) {
       print("Error al agregar producto: $e");
     }
-  }  
+  }
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -131,11 +130,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-            ),  
-
+            ),
 
             //yordy
-             Expanded(
+            Expanded(
               child: ListView.builder(
                 itemCount: dataFromFirestore.length,
                 itemBuilder: (context, index) {
@@ -152,6 +150,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             //rene
 
-
-
-
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SobreNosotrosScreen()),
+                );
+              },
+              child: Text('Ir a Sobre nosotros'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
