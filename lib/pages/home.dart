@@ -1,10 +1,12 @@
-
-
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:eval_sis22/pages/sobrenosotros.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+void main() {
+  runApp(const MyApp());
+} 
+//Yordy
 
   
 
