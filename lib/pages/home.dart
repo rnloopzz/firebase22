@@ -27,29 +27,48 @@ class MyApp extends StatelessWidget {
 //rene
   
 
- 
+ class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
 
   @override
-  Widget build(BuildContext context) {
+  State<MyHomePage> createState() => _MyHomePageState();
+}
 
-    return Scaffold(
-      appBar: AppBar(
+class _MyHomePageState extends State<MyHomePage> {
+  List<Map<String, dynamic>> dataFromFirestore = [];
+  TextEditingController nombreController = TextEditingController();
+  TextEditingController estadoController = TextEditingController();
+  TextEditingController precioController =
+      TextEditingController(); // Agregado para el precio
 
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      
-        title: Text(widget.title),
-      ),
-      body: const Center(
-        child: Column(children: [
-          Text("testing firebase")
+  void getChat() async {
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection("tb_productos");
+    QuerySnapshot mensajes = await collectionReference.get();
+    if (mensajes.docs.isNotEmpty) {
+      setState(() {
+        dataFromFirestore.clear();
+      });
 
-        ]),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      for (var doc in mensajes.docs) {
+        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+        if (kDebugMode) {
+          print(data);
+        }
+        setState(() {
+          dataFromFirestore.add(data);
+        });
+      }
+    }
+  }
+
+  //Yordy
+
+
+
+
     );
   }
 
