@@ -1,4 +1,4 @@
-import 'package:eval_sis22/pages/sobrenosotros.dart';
+import 'package:firebase22/pages/sobrenosotros.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
