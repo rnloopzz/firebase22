@@ -65,6 +65,30 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Yordy
+   void agregarProducto() async {
+    try {
+      CollectionReference collectionReference =
+          FirebaseFirestore.instance.collection("tb_productos");
+
+      String nombre = nombreController.text;
+      String estado = estadoController.text;
+      String precio = precioController.text; // Obtener el precio
+
+      await collectionReference.add({
+        'nombre': nombre,
+        'estado': estado,
+        'precio': precio, // Agregar el precio al documento Firestore
+      });
+
+      nombreController.clear();
+      estadoController.clear();
+      precioController.clear(); // Limpiar el campo de precio
+
+      getChat(); // Actualiza la lista de datos desde Firestore
+    } catch (e) {
+      print("Error al agregar producto: $e");
+    }
+  }
 
 
 
