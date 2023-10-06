@@ -3,13 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'pages/home.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp().then((_) {
-    runApp(const MyApp());
-  });
-}
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
