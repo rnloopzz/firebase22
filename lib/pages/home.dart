@@ -8,28 +8,26 @@ void main() {
 } 
 //Yordy
 
-  
-
-  final String title;
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  
-  void getProductos() async {
-    CollectionReference collectionReference = 
-    FirebaseFirestore.instance.collection("tb_productos");
-    QuerySnapshot mensajes = await collectionReference.get();
-    if (mensajes.docs.length != 0) {
-      for (var doc in mensajes.docs) {
-        print(doc.data());
-        
-      }
-      
-    }
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Firestore Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Firestore Demo'),
+    );
   }
+}
+//rene
+  
+
+ 
 
   @override
   Widget build(BuildContext context) {
