@@ -135,6 +135,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
             //yordy
+             Expanded(
+              child: ListView.builder(
+                itemCount: dataFromFirestore.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title:
+                        Text("Nombre: ${dataFromFirestore[index]['nombre']}"),
+                    subtitle:
+                        Text("Estado: ${dataFromFirestore[index]['estado']}"),
+                    trailing: Text(
+                        "Precio: ${dataFromFirestore[index]['precio']}"), // Mostrar el precio
+                  );
+                },
+              ),
+            ),
+            //rene
 
 
 
