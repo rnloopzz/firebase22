@@ -5,10 +5,9 @@ import 'pages/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp().then((_){
+  Firebase.initializeApp().then((_) {
     runApp(const MyApp());
   });
-  
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-      
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -29,4 +27,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
